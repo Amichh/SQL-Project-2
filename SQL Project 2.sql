@@ -58,7 +58,7 @@ Add SplitOwnerCity Nvarchar(255);
 Update NashvilleHousing
 SET SplitOwnerCity =PARSENAME(REPLACE(OwnerAddress, ',', '.'),1)
 
--- Changing the SoldAsVacant Value to Yes and No
+-- Changing the SoldAsVacant Value to Yes and No Only
 --Select Distinct(SoldAsVacant), count(SoldAsVacant)
 --From .NashvilleHousing
 --Group by SoldAsVacant
@@ -75,7 +75,7 @@ SET SoldAsVacant =Case When SoldAsVacant ='Y' Then 'Yes'
 	  Else SoldASVacant
 	  END
 
---Removing Duplicate
+--Removing Duplicate by referncing Other column
 
 With R AS(
 Select *,ROW_NUMBER() Over(PARTITION BY ParcelID,
