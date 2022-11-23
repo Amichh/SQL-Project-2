@@ -90,9 +90,6 @@ From R
 Where row_num>1
 
 
-
-
-
 --Deleting Unwanted Column from the Table
 ALTER TABLE .NashvilleHousing
 DROP COLUMN Saledate,OwnerAddress
